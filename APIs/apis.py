@@ -54,7 +54,7 @@ class Llama():
         
         # Encode the prompt
         tokenized_message = self.tokenizer.apply_chat_template(history,
-                                                      return_tensors="pt").to('cuda')
+                                                    return_tensors="pt").to('cuda')
         attention_mask = torch.ones(tokenized_message.shape, device='cuda')
 
         # Initialize a stream to stream the response back
@@ -126,7 +126,7 @@ class Qwen():
         
         # Encode the prompt
         tokenized_message = self.tokenizer.apply_chat_template(history,
-                                                      return_tensors="pt").to('cuda')
+                                                    return_tensors="pt").to('cuda')
         attention_mask = torch.ones(tokenized_message.shape, device='cuda')
 
         # Initialize a stream to stream the response back

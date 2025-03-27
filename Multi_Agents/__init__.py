@@ -25,12 +25,12 @@ class CV_Analyzer:
 
     def __init__(self):
         # Initialize and keep warm the apis
-        manager = APIManager(['llama', 'phi', 'mistral', 'qwen'])
+        manager = APIManager(['llama', 'phi', 'mistral', 'gemma'])
         manager.start_and_keep_warm()
 
         # Define the agents
         self.analyzer1_agent = Analyzer_Agent('llama-app', 'Llama') # Analyzer Agent
-        self.analyzer2_agent = Analyzer_Agent('qwen-app', 'Qwen') # Analyzer Agent
+        self.analyzer2_agent = Analyzer_Agent('gemma-app', 'Gemma') # Analyzer Agent
         self.analyzer3_agent = Analyzer_Agent('phi-app', 'Phi') # Analyzer Agent
         self.judge_agent = Judge_Agent('mistral-app', 'Mistral') # Judge Agent
 

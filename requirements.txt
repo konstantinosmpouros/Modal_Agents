@@ -1,0 +1,4 @@
+modal
+pdfplumber
+langgraph
+graphviz

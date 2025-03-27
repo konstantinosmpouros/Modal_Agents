@@ -6,7 +6,7 @@ PACKAGE_ROOT = Path(os.path.abspath(os.path.dirname(__file__))).parent
 sys.path.append(str(PACKAGE_ROOT))
 
 import random
-from tools.pdf_parser import read_pdfs
+from utils import read_pdfs
 from Multi_Agents import CV_Analyzer
 
 
@@ -15,7 +15,7 @@ if __name__ == '__main__':
     cv_multi_agent = CV_Analyzer()
     
     # 2) Load all PDFs from knowledge_base into a dictionary
-    pdf_texts = read_pdfs('RAG/CV/knowledge_base')
+    pdf_texts = read_pdfs('data/CV/knowledge_base')
     if not pdf_texts:
         print("No PDFs found or folder doesn't exist. Exiting.")
         exit(1)

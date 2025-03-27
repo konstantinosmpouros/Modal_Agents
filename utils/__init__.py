@@ -1,33 +1,34 @@
 # sudo apt install poppler-utils
-from pdf2image import convert_from_path
+# from pdf2image import convert_from_path
 from pathlib import Path
 import pdfplumber
 import os
 import random
 
-def extract_img_from_pdf(folder='knowledge_base'):
-    pdf_folder = Path(folder)
-    pdf_images = {}
+# def extract_img_from_pdf(folder='data/CV/knowledge_base'):
+#     pdf_folder = Path(folder)
+#     pdf_images = {}
 
-    if not pdf_folder.exists():
-        print(f'Error: The folder {folder} does not exist.')
-        return {}
+#     if not pdf_folder.exists():
+#         print(f'Error: The folder {folder} does not exist.')
+#         return {}
 
-    for pdf_file in pdf_folder.glob("*.pdf"):
-        # Convert PDF to a list of images (one per page)
-        pages = convert_from_path(pdf_file, dpi=300)
-
-        img_pages = []
-        # Save each page as an image
-        for _, page in enumerate(pages):
-            img_pages.append(page)
+#     for pdf_file in pdf_folder.glob("*.pdf"):
+#         # Convert PDF to a list of images (one per page)
+#         pages = convert_from_path(pdf_file, dpi=300)
         
-        pdf_images[pdf_file.name] = img_pages
+#         img_pages = []
         
-    return pdf_images
+#         # Save each page as an image
+#         for _, page in enumerate(pages):
+#             img_pages.append(page)
+        
+#         pdf_images[pdf_file.name] = img_pages
+        
+#     return pdf_images
 
 
-def read_pdfs(folder='knowledge_base'):
+def read_pdfs(folder='data/CV/knowledge_base'):
     pdf_folder = Path(folder)
     pdf_text = {}
 
@@ -43,7 +44,7 @@ def read_pdfs(folder='knowledge_base'):
     return pdf_text
 
 
-def get_random_pdf_as_string(knowledge_base_dir='knowledge_base'):
+def get_random_pdf_as_string(knowledge_base_dir='data/CV/knowledge_base'):
     # Check if the directory exists
     if not os.path.isdir(knowledge_base_dir):
         raise ValueError(f"The directory '{knowledge_base_dir}' does not exist.")

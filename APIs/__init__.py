@@ -27,8 +27,8 @@ class APIManager:
     def start_and_keep_warm(self):
         """
         A method to:
-          1) Run an async check/deploy of all apis_needed (blocking until done).
-          2) Launch a background thread that does keep-warm indefinitely.
+            1) Run an async check/deploy of all apis_needed (blocking until done).
+            2) Launch a background thread that does keep-warm indefinitely.
         """
         # Step 1: Do deployment checks in a single run call (this blocks)
         asyncio.run(self._initialize_apis())
@@ -40,8 +40,8 @@ class APIManager:
     async def _initialize_apis(self):
         """
         Async method that runs:
-          - concurrency check of all apis needed
-          - if needed, deploy them
+            - concurrency check of all apis needed
+            - if needed, deploy them
         """
         print("Starting APIs initialization process...\n")
 
